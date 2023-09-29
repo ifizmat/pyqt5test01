@@ -8,10 +8,19 @@ class main_window(QMainWindow):
         
         self.resize(900, 500)
         self.setWindowTitle("Test PyQt5 v0.1")
-        label_test = QtWidgets.QLabel(self)
-        label_test.setGeometry(50, 50, 800, 200)
-        label_test.setFont(QtGui.QFont("Courier New", 56, QtGui.QFont.Bold))
-        label_test.setText("Test PyQt5 QLabel.")
+        self.label_test = QtWidgets.QLabel(self)
+        self.label_test.setGeometry(50, 50, 800, 200)
+        self.label_test.setFont(QtGui.QFont("Courier New", 56, QtGui.QFont.Bold))
+        self.label_test.setText("Test PyQt5 QLabel.")
+                
+        start_button = QtWidgets.QPushButton(self)
+        start_button.setGeometry(50, 300, 150, 70)
+        start_button.setText("Start")
+        start_button.setFont(QtGui.QFont("Times", 32, QtGui.QFont.Normal))
+        start_button.clicked.connect(self.start_button_onclick)
+        
+    def start_button_onclick(self):
+        self.label_test.setText("Start")
         
 if __name__ == "__main__":
     app = QApplication(sys.argv)
