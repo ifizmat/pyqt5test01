@@ -19,8 +19,17 @@ class main_window(QMainWindow):
         start_button.setFont(QtGui.QFont("Times", 32, QtGui.QFont.Normal))
         start_button.clicked.connect(self.start_button_onclick)
         
+        stop_button = QtWidgets.QPushButton(self)
+        stop_button.setGeometry(250, 300, 150, 70)
+        stop_button.setText("Stop")
+        stop_button.setFont(QtGui.QFont("Times", 32, QtGui.QFont.Normal))
+        stop_button.clicked.connect(self.stop_button_onclick)
+
     def start_button_onclick(self):
         self.label_test.setText("Start")
+
+    def stop_button_onclick(self):
+        self.label_test.setText("Stop")
         
 if __name__ == "__main__":
     app = QApplication(sys.argv)
